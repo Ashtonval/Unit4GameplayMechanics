@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public PowerUpType currentPowerUp = PowerUpType.None;
+
+    public GameObject rocketPrefab;
+    private GameObject tmpRocket;
+    private Coroutine powerupCountdown;
     private float powerupStrength = 15.0f;
     private Rigidbody playerRb;
     public float speed = 5.0f;
