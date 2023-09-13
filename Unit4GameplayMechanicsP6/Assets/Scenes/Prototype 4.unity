@@ -233,12 +233,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a928ae7c282f274bba182b355106d11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab:
+  enemyPrefabs:
   - {fileID: 2734622354718711365, guid: ca0ebc7ba6979df4a9abd810162cfbf0, type: 3}
   - {fileID: 2734622354718711365, guid: 783e846c49a069940a4d795e2b131a8f, type: 3}
   enemyCount: 0
   waveNumber: 1
-  powerupPrefab: {fileID: 8044703958850781669, guid: 4cfa3beb81399b34bb6b413c38866fea, type: 3}
+  powerupPrefabs:
+  - {fileID: 8044703958850781669, guid: 4cfa3beb81399b34bb6b413c38866fea, type: 3}
+  - {fileID: 8044703958850781669, guid: 369c05688a10dd34cb964c42c17dab55, type: 3}
+  - {fileID: 6851656905552997432, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
 --- !u!4 &270863052
 Transform:
   m_ObjectHideFlags: 0
@@ -254,6 +257,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &422976509
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2642038376718876117, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851656905552997432, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
+      propertyPath: m_Name
+      value: PowerupSmash
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0cf0a7a3efb33b04c981d23e6b18a55d, type: 3}
 --- !u!1 &1211016355
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,9 +827,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b70579c4f09494bb2555fe9e470723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  currentPowerUp: 0
+  rocketPrefab: {fileID: 4946574293039763643, guid: 41e17d9b969c39448b433a60a34a3fdb, type: 3}
+  speed: 3
   hasPowerup: 0
   powerupIndicator: {fileID: 1686383462}
+  hangTime: 0.5
+  smashSpeed: 50
+  explosionForce: 75
+  explosionRadius: 75
 --- !u!1 &2064490123
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84236f1f9adc57e42bbf9b0b2403a2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
+  rotationSpeed: 180
 --- !u!4 &2064490125
 Transform:
   m_ObjectHideFlags: 0
@@ -889,3 +955,4 @@ SceneRoots:
   - {fileID: 2064490125}
   - {fileID: 270863052}
   - {fileID: 1227560679}
+  - {fileID: 422976509}
